@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
@@ -14,7 +13,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import com.boldadeideas.springboot.form.app.models.domain.Usuario;
 
 @Controller
-@SessionAttributes("user")
+@SessionAttributes("usuario")
 public class FormController {
 
 	@GetMapping("/form")
@@ -26,7 +25,7 @@ public class FormController {
 		usuario.setApellido("Doe");
 		usuario.setIdentificador("123.456.789-K");
 		
-		model.addAttribute("user", usuario);
+		model.addAttribute("usuario", usuario);
 		model.addAttribute("titulo", "Formulario Usuarios");
 		return "form";
 	}
@@ -35,7 +34,7 @@ public class FormController {
 	// You can use @RequestParam to get an attribute from the form with the name
 	// @RequestParam String username, @RequestParam String password, @RequestParam
 	// String email
-	public String procesar(@Valid @ModelAttribute("user") Usuario usuario, 
+	public String procesar(@Valid Usuario usuario, 
 			BindingResult result, 
 			Model model, 
 			SessionStatus status) {
