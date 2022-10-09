@@ -4,6 +4,23 @@ import javax.validation.constraints.NotEmpty;
 
 public class Usuario {
 
+	private String identificador;
+
+	@NotEmpty
+	private String username;
+
+	@NotEmpty
+	private String password;
+
+	@NotEmpty
+	private String email;
+
+	@NotEmpty
+	private String nombre;
+
+	@NotEmpty
+	private String apellido;
+	
 	public String getIdentificador() {
 		return identificador;
 	}
@@ -11,23 +28,6 @@ public class Usuario {
 	public void setIdentificador(String identificador) {
 		this.identificador = identificador;
 	}
-
-	private String identificador;
-	
-	@NotEmpty
-	private String username;
-	
-	@NotEmpty
-	private String password;
-	
-	@NotEmpty
-	private String email;
-	
-	@NotEmpty
-	private String nombre;
-	
-	@NotEmpty
-	private String apellido;
 
 	public String getNombre() {
 		return nombre;
