@@ -5,9 +5,12 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
+import com.boldadeideas.springboot.form.app.validation.IdentificadorRegex;
+
 public class Usuario {
 
 	//@Pattern(regexp = "[\\d]{2}[.][\\d]{3}[.][\\d]{3}[-][A-Z]")
+	@IdentificadorRegex
 	private String identificador;
 
 	@NotBlank
