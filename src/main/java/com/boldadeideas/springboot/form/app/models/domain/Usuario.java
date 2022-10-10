@@ -3,6 +3,7 @@ package com.boldadeideas.springboot.form.app.models.domain;
 import java.util.Date;
 
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Future;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -40,6 +41,7 @@ public class Usuario {
 
 	@NotNull
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Future
 	private Date fechaNacimiento;
 
 	// @NotEmpty(message = "El nombre no puede ser vacio")
