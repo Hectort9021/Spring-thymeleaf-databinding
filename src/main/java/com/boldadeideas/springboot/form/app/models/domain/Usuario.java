@@ -55,6 +55,9 @@ public class Usuario {
 	
 	@NotEmpty
 	private List<Roles> roles;
+	
+	
+	private Boolean habilitar;
 
 	public String getIdentificador() {
 		return identificador;
@@ -134,6 +137,14 @@ public class Usuario {
 
 	public void setRoles(List<Roles> roles) {
 		this.roles = roles;
+	}
+
+	public Boolean getHabilitar() {
+		return habilitar;
+	}
+
+	public void setHabilitar(Boolean habilitar) {
+		this.habilitar = habilitar;
 	}
 
 }
