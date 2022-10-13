@@ -1,6 +1,7 @@
 package com.boldadeideas.springboot.form.app.controllers;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
@@ -121,6 +122,16 @@ public class FormController {
 		
 		return paisesMap;
 		
+	}
+	
+	@ModelAttribute("listaRoles")
+	public List<String> listaRoles(){
+		List<String> roles = new ArrayList<>();
+		roles.add("ROLE_ADMIN");
+		roles.add("ROLE_USER");
+		roles.add("ROLE_MODERATOR");
+		
+		return roles;
 	}
 
 }
