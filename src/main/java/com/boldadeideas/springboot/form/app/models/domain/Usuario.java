@@ -50,7 +50,7 @@ public class Usuario {
 	@Requerido
 	private String apellido;
 	
-	@Valid
+	@NotNull
 	private Pais pais;
 
 	public String getIdentificador() {
