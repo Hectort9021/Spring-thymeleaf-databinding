@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.boldadeideas.springboot.form.app.editors.NombreMayusculaEditor;
+import com.boldadeideas.springboot.form.app.models.domain.Pais;
 import com.boldadeideas.springboot.form.app.models.domain.Usuario;
 import com.boldadeideas.springboot.form.app.validation.UsuarioValidador;
 
@@ -88,6 +89,18 @@ public class FormController {
 		return "resultado";
 	}
 	
+	@ModelAttribute("listaPaises")
+	public List<Pais> listaPaises(){
+		return Arrays.asList(
+				new Pais(1, "ES", "Espana"), 
+				new Pais(2, "MX", "Mexico"), 
+				new Pais(3, "CL", "Chile"), 
+				new Pais(4, "AR", "Argentina"), 
+				new Pais(5, "PE", "Peru"), 
+				new Pais(6, "CO", "Colombia"), 
+				new Pais(7, "VZ", "Venezuela"));
+	}
+	
 	@ModelAttribute("paises")
 	public List<String> paises(){
 		return Arrays.asList("Espana", "Mexico", "Chile", "Argentina", "Peru", "Colombia", "Venezuela");
@@ -95,7 +108,7 @@ public class FormController {
 	
 	@ModelAttribute("paisesMap")
 	public Map<String, String> paisesMap(){
-		Map<String, String> paisesMap = new HashMap<String, String>();
+		Map<String, String> paisesMap = new HashMap<>();
 		paisesMap.put("ES", "Espana");
 		paisesMap.put("MX", "Mexico");
 		paisesMap.put("CL", "Chile");
