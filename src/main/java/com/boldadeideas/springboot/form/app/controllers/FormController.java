@@ -162,5 +162,10 @@ public class FormController {
 		return roles;
 		
 	}
+	
+	@ModelAttribute("genero")
+	public List<String> genero(){
+		return Arrays.asList("Hombre", "Mujer");
+	}
 
 }
