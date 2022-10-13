@@ -25,8 +25,9 @@ import org.springframework.web.bind.support.SessionStatus;
 
 import com.boldadeideas.springboot.form.app.editors.NombreMayusculaEditor;
 import com.boldadeideas.springboot.form.app.editors.PaisPropertyEditor;
+import com.boldadeideas.springboot.form.app.editors.RolesEditor;
 import com.boldadeideas.springboot.form.app.models.domain.Pais;
-import com.boldadeideas.springboot.form.app.models.domain.Role;
+import com.boldadeideas.springboot.form.app.models.domain.Roles;
 import com.boldadeideas.springboot.form.app.models.domain.Usuario;
 import com.boldadeideas.springboot.form.app.services.PaisService;
 import com.boldadeideas.springboot.form.app.services.RoleService;
@@ -48,6 +49,9 @@ public class FormController {
 	@Autowired
 	private PaisPropertyEditor paisEditor;
 	
+	@Autowired
+	private RolesEditor roleEditor;
+	
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
 		// Using set replace the old validator with the new one validador
@@ -56,9 +60,12 @@ public class FormController {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		dateFormat.setLenient(false);
 		binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
+		
 		binder.registerCustomEditor(String.class, "nombre", new NombreMayusculaEditor());
 		binder.registerCustomEditor(String.class, "apellido", new NombreMayusculaEditor());
+		
 		binder.registerCustomEditor(Pais.class, "pais", paisEditor);
+		binder.registerCustomEditor(Roles.class, "roles", roleEditor);
 	}
 
 	@GetMapping("/form")
@@ -110,7 +117,7 @@ public class FormController {
 	}
 	
 	@ModelAttribute("listaRoles")
-	public List<Role> listaRoles(){
+	public List<Roles> listaRoles(){
 		return roleService.listar();
 	}
 	

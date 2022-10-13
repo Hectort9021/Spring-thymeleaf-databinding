@@ -1,18 +1,18 @@
 package com.boldadeideas.springboot.form.app.models.domain;
 
-public class Role {
+public class Roles {
 
 	private Integer id;
 	private String nombre;
 	private String role;
 
-	public Role(Integer id, String nombre, String role) {
+	public Roles(Integer id, String nombre, String role) {
 		this.id = id;
 		this.nombre = nombre;
 		this.role = role;
 	}
 
-	public Role() {
+	public Roles() {
 	}
 
 	public Integer getId() {

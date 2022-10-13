@@ -54,7 +54,7 @@ public class Usuario {
 	private Pais pais;
 	
 	@NotEmpty
-	private List<Role> roles;
+	private List<Roles> roles;
 
 	public String getIdentificador() {
 		return identificador;
@@ -128,11 +128,11 @@ public class Usuario {
 		this.pais = pais;
 	}
 
-	public List<Role> getRoles() {
+	public List<Roles> getRoles() {
 		return roles;
 	}
 
-	public void setRoles(List<Role> roles) {
+	public void setRoles(List<Roles> roles) {
 		this.roles = roles;
 	}
 

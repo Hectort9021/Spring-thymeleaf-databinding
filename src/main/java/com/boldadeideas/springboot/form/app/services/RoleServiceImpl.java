@@ -5,29 +5,29 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.boldadeideas.springboot.form.app.models.domain.Role;
+import com.boldadeideas.springboot.form.app.models.domain.Roles;
 
 @Service
 public class RoleServiceImpl implements RoleService {
 
-	private List<Role> lista;
+	private List<Roles> lista;
 	
 	public RoleServiceImpl() {
 		this.lista = new ArrayList<>();
-		lista.add(new Role(1, "Administrador", "ROLE_ADMIN"));
-		lista.add(new Role(2, "Usuario", "ROLE_USER"));
-		lista.add(new Role(3, "Moderador", "ROLE_MODERATOR"));
+		lista.add(new Roles(1, "Administrador", "ROLE_ADMIN"));
+		lista.add(new Roles(2, "Usuario", "ROLE_USER"));
+		lista.add(new Roles(3, "Moderador", "ROLE_MODERATOR"));
 	}
 
 	@Override
-	public List<Role> listar() {
+	public List<Roles> listar() {
 		return lista;
 	}
 
 	@Override
-	public Role obtenerPorId(Integer id) {
-		Role resultado = null;
-		for (Role role : lista) {
+	public Roles obtenerPorId(Integer id) {
+		Roles resultado = null;
+		for (Roles role : lista) {
 			if(id == role.getId()) {
 				resultado = role;
 				break;

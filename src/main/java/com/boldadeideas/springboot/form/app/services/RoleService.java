@@ -2,11 +2,11 @@ package com.boldadeideas.springboot.form.app.services;
 
 import java.util.List;
 
-import com.boldadeideas.springboot.form.app.models.domain.Role;
+import com.boldadeideas.springboot.form.app.models.domain.Roles;
 
 public interface RoleService {
 	
-	public List<Role> listar();
+	public List<Roles> listar();
 	
-	public Role obtenerPorId(Integer id);
+	public Roles obtenerPorId(Integer id);
 }
