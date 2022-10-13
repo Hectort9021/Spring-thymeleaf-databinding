@@ -26,8 +26,10 @@ import org.springframework.web.bind.support.SessionStatus;
 import com.boldadeideas.springboot.form.app.editors.NombreMayusculaEditor;
 import com.boldadeideas.springboot.form.app.editors.PaisPropertyEditor;
 import com.boldadeideas.springboot.form.app.models.domain.Pais;
+import com.boldadeideas.springboot.form.app.models.domain.Role;
 import com.boldadeideas.springboot.form.app.models.domain.Usuario;
 import com.boldadeideas.springboot.form.app.services.PaisService;
+import com.boldadeideas.springboot.form.app.services.RoleService;
 import com.boldadeideas.springboot.form.app.validation.UsuarioValidador;
 
 @Controller
@@ -39,6 +41,9 @@ public class FormController {
 	
 	@Autowired
 	private PaisService paisService;
+	
+	@Autowired
+	private RoleService roleService;
 	
 	@Autowired
 	private PaisPropertyEditor paisEditor;
@@ -104,6 +109,11 @@ public class FormController {
 		return paisService.listar();
 	}
 	
+	@ModelAttribute("listaRoles")
+	public List<Role> listaRoles(){
+		return roleService.listar();
+	}
+	
 	@ModelAttribute("paises")
 	public List<String> paises(){
 		return Arrays.asList("Espana", "Mexico", "Chile", "Argentina", "Peru", "Colombia", "Venezuela");
@@ -124,8 +134,8 @@ public class FormController {
 		
 	}
 	
-	@ModelAttribute("listaRoles")
-	public List<String> listaRoles(){
+	@ModelAttribute("listaRolesString")
+	public List<String> listaRolesString(){
 		List<String> roles = new ArrayList<>();
 		roles.add("ROLE_ADMIN");
 		roles.add("ROLE_USER");
