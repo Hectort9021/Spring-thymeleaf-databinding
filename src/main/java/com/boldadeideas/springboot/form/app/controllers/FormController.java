@@ -121,7 +121,7 @@ public class FormController {
 			return "redirect:/form";
 		}
 		
-		model.addAttribute("titulo", "Resutaldo form");
+		model.addAttribute("titulo", "Resutaldo Form");
 		
 		status.setComplete();
 		return "resultado";
